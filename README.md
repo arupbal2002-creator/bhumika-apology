@@ -3,86 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff2f6">
+<meta name="theme-color" content="#fff2f4">
 <title>Bhumika, One Small Thing 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --pink: #f45f98;
-  --pink2: #ff8db5;
-  --ink: #392b35;
-  --muted: #766875;
-  --cream: #fff9f4;
-  --line: #f7d4e1;
+  --ink: #573247;
+  --pink: #ed347c;
+  --hot: #f45d98;
+  --cream: #fff5ed;
+  --muted: #805f70;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--ink);
+  font-family: 'Patrick Hand', 'Quicksand', cursive;
   background:
-    radial-gradient(circle at 10% 5%, #ffe0eb 0, transparent 30%),
-    radial-gradient(circle at 90% 90%, #ffe6ef 0, transparent 35%),
-    #fff8f5;
+    radial-gradient(
+      ellipse at 50% 20%,
+      #fffaf1 0%,
+      #fff5ed 48%,
+      #ffe7ef 100%
+    );
   overflow-x: hidden;
 }
 
+/* Soft background decorations */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .32;
+  background-image:
+    radial-gradient(circle at 7% 20%, #f7a6c5 0 2px, transparent 3px),
+    radial-gradient(circle at 91% 15%, #f7a6c5 0 3px, transparent 4px),
+    radial-gradient(circle at 13% 79%, #f7a6c5 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 72%, #f7a6c5 0 2px, transparent 3px);
+  z-index: 0;
+}
+
 .wrap {
-  width: min(620px, 92%);
+  width: min(650px, 94%);
   margin: auto;
-  padding: 26px 0 30px;
+  padding: 18px 0 28px;
   position: relative;
   z-index: 1;
 }
 
 .brand {
   text-align: center;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #d94e83;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  color: #ce4779;
   text-transform: uppercase;
-  margin: 4px 0 16px;
+  margin: 8px 0 14px;
 }
 
-/* PAGE PROGRESS */
+/* Progress indicators */
 
 .progress {
   display: flex;
   justify-content: center;
   gap: 6px;
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 }
 
 .dot {
   height: 6px;
-  width: 22px;
+  width: 19px;
   border-radius: 20px;
-  background: #f4d4df;
-  transition: 0.25s;
+  background: #f4c9d8;
+  transition: .25s;
 }
 
 .dot.on {
-  width: 32px;
+  width: 31px;
   background: var(--pink);
 }
 
-/* PAGE CARDS */
+/* Paper-style pages */
 
 .card {
   display: none;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid #f9d9e4;
-  border-radius: 26px;
-  padding: clamp(22px, 5vw, 36px);
+  position: relative;
+  isolation: isolate;
+  background: rgba(255, 250, 245, .94);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: clamp(21px, 5vw, 35px);
   text-align: center;
-  box-shadow: 0 18px 55px #c65c8212;
-  animation: enter 0.3s ease;
+  box-shadow:
+    0 7px 0 #f7d9df,
+    0 15px 40px #bd64801c;
+  animation: enter .3s ease;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "✿  ˚｡⋆";
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  color: #f39abb;
+  font-size: 17px;
+  opacity: .9;
+  z-index: -1;
+}
+
+.card::after {
+  content: "♡";
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  color: #f06b9e;
+  font-size: 23px;
+  transform: rotate(14deg);
+  z-index: -1;
 }
 
 .card.active {
@@ -102,79 +156,88 @@ body {
 }
 
 .emoji {
-  font-size: 42px;
-  margin: 0 0 12px;
+  font-size: 43px;
+  margin: 4px 0 10px;
 }
 
 .pill {
   display: inline-block;
   border-radius: 999px;
-  background: #fff0f5;
-  color: #bf3e70;
-  font-size: 11px;
-  letter-spacing: 1.4px;
-  font-weight: 800;
+  background: #ffe4ee;
+  color: #bc3c72;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
   padding: 8px 12px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 h1 {
-  font-size: clamp(30px, 7vw, 43px);
-  line-height: 1.12;
-  letter-spacing: -1.2px;
-  margin: 0 0 16px;
+  font-family: 'Caveat', 'Patrick Hand', cursive;
+  font-size: clamp(43px, 10vw, 62px);
+  line-height: .98;
+  margin: 0 0 17px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(24px, 5vw, 32px);
-  line-height: 1.2;
-  margin: 0 0 14px;
-  letter-spacing: -0.5px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(29px, 7vw, 38px);
+  line-height: 1.1;
+  margin: 0 0 13px;
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: clamp(17px, 4.2vw, 20px);
+  line-height: 1.43;
   color: var(--muted);
   margin: 10px 0;
 }
 
 strong,
 .accent {
-  color: #dc4c83;
+  color: #d93f7e;
+  font-weight: 700;
 }
+
+/* Paper note */
 
 .note {
-  background: var(--cream);
-  border: 1px dashed #efb7cc;
-  border-radius: 16px;
-  padding: 15px;
+  background: #fff0e2;
+  border: 2px solid #f2c8ae;
+  border-radius: 12px;
+  padding: 14px;
   text-align: left;
-  margin: 20px 0;
-  color: #66535f;
-  line-height: 1.6;
+  margin: 19px 0;
+  color: #67465a;
+  line-height: 1.45;
+  font-size: 18px;
+  box-shadow: 0 4px 0 #f9e0d1;
 }
 
-/* BUTTONS */
+/* Buttons */
 
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 23px;
+  margin-top: 22px;
 }
 
 button,
 .insta {
-  font: inherit;
-  font-size: 14px;
-  font-weight: 750;
+  font-family: 'Patrick Hand', 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
   border: 0;
   border-radius: 999px;
-  padding: 14px 19px;
+  padding: 12px 19px;
   cursor: pointer;
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform .18s, box-shadow .18s;
+  position: relative;
+  z-index: 2;
 }
 
 button:hover,
@@ -185,67 +248,69 @@ button:hover,
 .primary,
 .accepted {
   color: white;
-  background: linear-gradient(135deg, var(--pink2), var(--pink));
-  box-shadow: 0 8px 20px #f45f982e;
+  background: linear-gradient(135deg, #ff6fa6, #e92f7b);
+  box-shadow:
+    0 5px 0 #c72b68,
+    0 9px 18px #f0529133;
 }
 
 .secondary {
-  background: #fff0f5;
-  color: #7b4a60;
-  border: 1px solid #f7d4e1;
+  background: #fff2f5;
+  color: #7c4d65;
+  border: 1px solid #f3c5d6;
+  box-shadow: 0 3px 0 #f3d8e2;
 }
-
-/* INVESTIGATION CHOICES */
 
 .choice {
   display: block;
   width: 100%;
   text-align: left;
   margin: 10px auto;
-  background: #fff8fb;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  color: #594650;
+  background: #fff6f6;
+  border: 1.5px solid #f0c7d3;
+  border-radius: 14px;
+  color: #594052;
+  box-shadow: 0 3px 0 #f7e2e4;
 }
 
 .choice:hover {
   background: #ffeaf2;
 }
 
-.choice:focus-visible,
-button:focus-visible,
-a:focus-visible {
-  outline: 3px solid #dc4c83;
+:focus-visible {
+  outline: 3px solid #d93f7e;
   outline-offset: 3px;
 }
 
-/* APOLOGY BUTTONS */
+/* Apology buttons */
 
 .apology-buttons {
   position: relative;
-  min-height: 110px;
+  min-height: 108px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 17px;
 }
 
 .not-accepted {
-  background: #f2edf0;
-  color: #5b4b55;
-  border: 1px solid #e7dce3;
+  background: #fff3f2;
+  color: #6e4d5c;
+  border: 1px solid #edc8d2;
+  box-shadow: 0 4px 0 #efd9dc;
   touch-action: manipulation;
 }
 
 #message {
   min-height: 28px;
-  font-weight: 800;
-  color: #d94e83;
+  font-size: 19px;
+  font-weight: 700;
+  color: #d93f7e;
 }
 
-/* INSTAGRAM BUTTON */
+/* Instagram link */
 
 .insta {
   display: inline-block;
@@ -253,34 +318,38 @@ a:focus-visible {
   color: white;
   background: linear-gradient(
     110deg,
-    #ff758c,
-    #ff7eb3,
-    #c56cf0
+    #ff638d,
+    #ed3e8c,
+    #ba70d9
   );
-  box-shadow: 0 8px 20px #e65d972e;
+  box-shadow:
+    0 5px 0 #c82d73,
+    0 9px 18px #e65d972e;
   margin-top: 16px;
 }
 
 .small {
-  font-size: 12px;
-  color: #a08e99;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 11px;
+  color: #a08491;
 }
 
 .footer {
   text-align: center;
-  font-size: 12px;
-  color: #a18d98;
-  padding: 18px 8px 0;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: #a16b85;
+  padding: 19px 8px 0;
 }
 
-/* FLOATING FLOWERS */
+/* Floating flowers */
 
 .flower {
   position: fixed;
   bottom: -35px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.55;
+  opacity: .65;
   animation: rise linear infinite;
 }
 
@@ -290,28 +359,53 @@ a:focus-visible {
   }
 }
 
-/* MOBILE DESIGN */
+/* Decorative flowers inside cards */
+
+.corner-flower {
+  position: absolute;
+  font-size: 28px;
+  opacity: .5;
+  pointer-events: none;
+}
+
+.corner-flower.left {
+  left: 7px;
+  bottom: 14px;
+  transform: rotate(-20deg);
+}
+
+.corner-flower.right {
+  right: 7px;
+  bottom: 14px;
+  transform: rotate(20deg);
+}
+
+/* Mobile styling */
 
 @media (max-width: 420px) {
   button,
   .insta {
-    font-size: 13px;
-    padding: 13px 15px;
+    font-size: 17px;
+    padding: 12px 16px;
   }
 
   .card {
-    border-radius: 22px;
+    border-radius: 18px;
+  }
+
+  .wrap {
+    width: 93%;
   }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
+/* Respect reduced-motion settings */
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -320,7 +414,6 @@ a:focus-visible {
 
 <body>
 
-<!-- FLOATING FLOWERS AND HEARTS -->
 <div id="flowers" aria-hidden="true"></div>
 
 <main class="wrap">
@@ -357,14 +450,13 @@ a:focus-visible {
       <strong>Bhumika:</strong>
       Chief Justice of Being Mad
       <br>
-
       <strong>Arup:</strong>
       Professional Overthinker
     </p>
 
     <div class="note">
-      📰 Latest update: Arup admits his
-      communication skills may need a software update.
+      📰 Latest update: Arup admits his communication
+      skills may need a software update.
     </div>
 
     <div class="row">
@@ -378,6 +470,9 @@ a:focus-visible {
       No courtroom snacks.
     </p>
 
+    <span class="corner-flower left">🌸</span>
+    <span class="corner-flower right">🌷</span>
+
   </section>
 
 
@@ -385,13 +480,11 @@ a:focus-visible {
 
   <section class="card">
 
-    <div class="emoji">🕵️‍♀️</div>
+    <div class="emoji">🕵️‍♀️🔎</div>
 
     <h2>What went wrong?</h2>
 
-    <p>
-      Choose the closest explanation, Your Honour.
-    </p>
+    <p>Choose the closest explanation, Your Honour.</p>
 
     <button
       class="choice"
@@ -409,19 +502,14 @@ a:focus-visible {
 
     <button
       class="choice"
-      onclick="theory('Both sides could use a little software update. 🔄')"
+      onclick="theory('A little communication update was needed. 🔄')"
     >
       🔄 A little communication update was needed.
     </button>
 
-    <p
-      id="theoryResult"
-      class="accent"
-      aria-live="polite"
-    ></p>
+    <p id="theoryResult" class="accent" aria-live="polite"></p>
 
     <div class="row">
-
       <button class="secondary" onclick="showPage(0)">
         ← Back
       </button>
@@ -429,8 +517,10 @@ a:focus-visible {
       <button class="primary" onclick="showPage(2)">
         Next →
       </button>
-
     </div>
+
+    <span class="corner-flower left">🌼</span>
+    <span class="corner-flower right">🌸</span>
 
   </section>
 
@@ -466,7 +556,6 @@ a:focus-visible {
     </div>
 
     <div class="row">
-
       <button class="secondary" onclick="showPage(1)">
         ← Back
       </button>
@@ -474,13 +563,15 @@ a:focus-visible {
       <button class="primary" onclick="showPage(3)">
         See the verdict ⚖️
       </button>
-
     </div>
+
+    <span class="corner-flower left">🌷</span>
+    <span class="corner-flower right">🌼</span>
 
   </section>
 
 
-  <!-- PAGE 4: COURT VERDICT -->
+  <!-- PAGE 4: VERDICT -->
 
   <section class="card">
 
@@ -496,22 +587,16 @@ a:focus-visible {
     <div class="note">
       ☑️ Guilty of overthinking
       <br>
-
       ☑️ Guilty of not explaining things clearly enough
       <br>
-
       ☑️ Sentenced to listen properly and do better
       <br>
-
       ☑️ Allowed to hope for a conversation—not demand one
     </div>
 
-    <p>
-      Your Honour, what’s the verdict?
-    </p>
+    <p>Your Honour, what’s the verdict?</p>
 
     <div class="row">
-
       <button class="secondary" onclick="showPage(4)">
         Still angry 😤
       </button>
@@ -523,13 +608,15 @@ a:focus-visible {
       <button class="secondary" onclick="showPage(4)">
         Let’s talk 💬
       </button>
-
     </div>
+
+    <span class="corner-flower left">🌸</span>
+    <span class="corner-flower right">🌷</span>
 
   </section>
 
 
-  <!-- PAGE 5: APOLOGY BUTTONS -->
+  <!-- PAGE 5: APOLOGY RESPONSE -->
 
   <section class="card">
 
@@ -548,17 +635,11 @@ a:focus-visible {
 
     <div class="apology-buttons">
 
-      <button
-        class="accepted"
-        onclick="accepted()"
-      >
+      <button class="accepted" onclick="accepted()">
         💗 Apology Accepted
       </button>
 
-      <button
-        class="not-accepted"
-        id="noBtn"
-      >
+      <button class="not-accepted" id="noBtn">
         😤 Not Accepted
       </button>
 
@@ -567,7 +648,6 @@ a:focus-visible {
     <p id="message" aria-live="polite"></p>
 
     <div class="row">
-
       <button class="secondary" onclick="showPage(3)">
         ← Back
       </button>
@@ -575,30 +655,35 @@ a:focus-visible {
       <button class="primary" onclick="showPage(5)">
         One last thing… 💌
       </button>
-
     </div>
+
+    <span class="corner-flower left">🌼</span>
+    <span class="corner-flower right">🌸</span>
 
   </section>
 
 
-  <!-- PAGE 6: INSTAGRAM -->
+  <!-- PAGE 6: ENDING AND INSTAGRAM -->
 
   <section class="card">
 
-    <div class="emoji">📱💌</div>
+    <div class="emoji">💌🌷</div>
 
     <h2>Case file: almost closed</h2>
 
     <p>
-      No pressure and no drama—just one person
-      who’d like a chance to clear up the
-      misunderstanding respectfully.
+      You don’t have to be okay every day.
+      Your feelings are valid, and your pace is yours.
     </p>
 
+    <div class="note">
+      No pressure and no drama—just one person who’d
+      like a chance to clear up the misunderstanding
+      respectfully.
+    </div>
+
     <p>
-      <strong>
-        If and when you’re comfortable, we can talk.
-      </strong>
+      <strong>If and when you’re comfortable, we can talk.</strong>
       ❤️
     </p>
 
@@ -622,12 +707,13 @@ a:focus-visible {
     </p>
 
     <div class="row">
-
       <button class="secondary" onclick="showPage(0)">
         ↻ Replay
       </button>
-
     </div>
+
+    <span class="corner-flower left">🌸</span>
+    <span class="corner-flower right">🌷</span>
 
   </section>
 
@@ -648,57 +734,40 @@ const pages = [...document.querySelectorAll(".card")];
 
 const progress = document.getElementById("progress");
 
-
-/* CREATE PROGRESS INDICATORS */
-
 pages.forEach((_, i) => {
-
   const dot = document.createElement("span");
 
   dot.className = "dot" + (i === 0 ? " on" : "");
 
   progress.appendChild(dot);
-
 });
 
-
-/* CHANGE PAGE */
-
 function showPage(index) {
-
   pages.forEach((page, i) => {
-
     page.classList.toggle("active", i === index);
-
   });
 
   [...progress.children].forEach((dot, i) => {
-
     dot.classList.toggle("on", i === index);
-
   });
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 
-/* INVESTIGATION OPTIONS */
+/* INVESTIGATION CHOICES */
 
 function theory(text) {
-
   document.getElementById("theoryResult").textContent = text;
-
 }
 
 
 /* APOLOGY ACCEPTED */
 
 function accepted() {
-
   document.getElementById("message").textContent =
     "🥹❤️ CASE CLOSED! Arup’s happiness is now charging… 🍫🎉";
 
@@ -709,7 +778,6 @@ function accepted() {
   button.style.position = "relative";
   button.style.left = "";
   button.style.top = "";
-
 }
 
 
@@ -720,9 +788,7 @@ const noBtn = document.getElementById("noBtn");
 let escapes = 0;
 
 function moveNo(event) {
-
   if (escapes >= 5) {
-
     noBtn.textContent = "Okay, you can tap me 😅";
 
     noBtn.style.position = "relative";
@@ -730,7 +796,6 @@ function moveNo(event) {
     noBtn.style.top = "";
 
     return;
-
   }
 
   if (event) {
@@ -740,9 +805,7 @@ function moveNo(event) {
   escapes++;
 
   const margin = 12;
-
   const width = noBtn.offsetWidth;
-  const height = noBtn.offsetHeight;
 
   const maxX = Math.max(
     margin,
@@ -751,7 +814,7 @@ function moveNo(event) {
 
   const maxY = Math.max(
     margin,
-    window.innerHeight - height - margin
+    window.innerHeight - noBtn.offsetHeight - margin
   );
 
   noBtn.style.position = "fixed";
@@ -768,14 +831,9 @@ function moveNo(event) {
     escapes >= 4
       ? "Catch me first! 🏃‍♀️"
       : "Not Accepted 😤";
-
 }
 
-
-/* DESKTOP AND MOBILE EVENTS */
-
 noBtn.addEventListener("pointerenter", moveNo);
-
 noBtn.addEventListener("click", moveNo);
 
 noBtn.addEventListener(
@@ -789,10 +847,9 @@ noBtn.addEventListener(
 
 const flowerBox = document.getElementById("flowers");
 
-const symbols = ["🌸", "💗", "🌷", "✨"];
+const symbols = ["🌸", "💗", "🌷", "✨", "🌼"];
 
 for (let i = 0; i < 14; i++) {
-
   const flower = document.createElement("span");
 
   flower.className = "flower";
@@ -800,8 +857,7 @@ for (let i = 0; i < 14; i++) {
   flower.textContent =
     symbols[Math.floor(Math.random() * symbols.length)];
 
-  flower.style.left =
-    Math.random() * 100 + "%";
+  flower.style.left = Math.random() * 100 + "%";
 
   flower.style.animationDuration =
     (10 + Math.random() * 12) + "s";
@@ -813,7 +869,6 @@ for (let i = 0; i < 14; i++) {
     (12 + Math.random() * 13) + "px";
 
   flowerBox.appendChild(flower);
-
 }
 
 </script>
