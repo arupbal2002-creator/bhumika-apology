@@ -14,7 +14,6 @@
 :root {
   --ink: #573247;
   --pink: #ed347c;
-  --hot: #f45d98;
   --cream: #fff5ed;
   --muted: #805f70;
 }
@@ -32,17 +31,14 @@ body {
   min-height: 100vh;
   color: var(--ink);
   font-family: 'Patrick Hand', 'Quicksand', cursive;
-  background:
-    radial-gradient(
-      ellipse at 50% 20%,
-      #fffaf1 0%,
-      #fff5ed 48%,
-      #ffe7ef 100%
-    );
+  background: radial-gradient(
+    ellipse at 50% 20%,
+    #fffaf1 0%,
+    #fff5ed 48%,
+    #ffe7ef 100%
+  );
   overflow-x: hidden;
 }
-
-/* Soft background decorations */
 
 body::before {
   content: "";
@@ -77,13 +73,11 @@ body::before {
   margin: 8px 0 14px;
 }
 
-/* Progress indicators */
-
 .progress {
   display: flex;
   justify-content: center;
   gap: 6px;
-  margin: 0 0 14px;
+  margin-bottom: 14px;
 }
 
 .dot {
@@ -98,8 +92,6 @@ body::before {
   width: 31px;
   background: var(--pink);
 }
-
-/* Paper-style pages */
 
 .card {
   display: none;
@@ -118,7 +110,7 @@ body::before {
 }
 
 .card::before {
-  content: "✿  ˚｡⋆";
+  content: "✿ ˚｡⋆";
   position: absolute;
   top: 9px;
   left: 12px;
@@ -178,7 +170,6 @@ h1 {
   font-size: clamp(43px, 10vw, 62px);
   line-height: .98;
   margin: 0 0 17px;
-  font-weight: 700;
 }
 
 h2 {
@@ -201,8 +192,6 @@ strong,
   font-weight: 700;
 }
 
-/* Paper note */
-
 .note {
   background: #fff0e2;
   border: 2px solid #f2c8ae;
@@ -215,8 +204,6 @@ strong,
   font-size: 18px;
   box-shadow: 0 4px 0 #f9e0d1;
 }
-
-/* Buttons */
 
 .row {
   display: flex;
@@ -282,8 +269,6 @@ button:hover,
   outline-offset: 3px;
 }
 
-/* Apology buttons */
-
 .apology-buttons {
   position: relative;
   min-height: 108px;
@@ -310,18 +295,11 @@ button:hover,
   color: #d93f7e;
 }
 
-/* Instagram link */
-
 .insta {
   display: inline-block;
   text-decoration: none;
   color: white;
-  background: linear-gradient(
-    110deg,
-    #ff638d,
-    #ed3e8c,
-    #ba70d9
-  );
+  background: linear-gradient(110deg, #ff638d, #ed3e8c, #ba70d9);
   box-shadow:
     0 5px 0 #c82d73,
     0 9px 18px #e65d972e;
@@ -342,8 +320,6 @@ button:hover,
   padding: 19px 8px 0;
 }
 
-/* Floating flowers */
-
 .flower {
   position: fixed;
   bottom: -35px;
@@ -358,8 +334,6 @@ button:hover,
     transform: translateY(-110vh) rotate(280deg);
   }
 }
-
-/* Decorative flowers inside cards */
 
 .corner-flower {
   position: absolute;
@@ -380,8 +354,6 @@ button:hover,
   transform: rotate(20deg);
 }
 
-/* Mobile styling */
-
 @media (max-width: 420px) {
   button,
   .insta {
@@ -397,8 +369,6 @@ button:hover,
     width: 93%;
   }
 }
-
-/* Respect reduced-motion settings */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -422,19 +392,13 @@ button:hover,
     A tiny case file · made with 💗
   </div>
 
-  <div
-    class="progress"
-    id="progress"
-    aria-label="Page progress"
-  ></div>
+  <div class="progress" id="progress"
+       aria-label="Page progress"></div>
 
-
-  <!-- PAGE 1: OPENING -->
-
+  <!-- PAGE 1 -->
   <section class="card active">
 
     <div class="emoji">🚨💌</div>
-
     <div class="pill">BREAKING NEWS</div>
 
     <h1>
@@ -448,8 +412,8 @@ button:hover,
 
     <p>
       <strong>Bhumika:</strong>
-      Chief Justice of Being Mad
-      <br>
+      Chief Justice of Being Mad<br>
+
       <strong>Arup:</strong>
       Professional Overthinker
     </p>
@@ -475,39 +439,35 @@ button:hover,
 
   </section>
 
-
-  <!-- PAGE 2: INVESTIGATION -->
-
+  <!-- PAGE 2 -->
   <section class="card">
 
     <div class="emoji">🕵️‍♀️🔎</div>
 
     <h2>What went wrong?</h2>
 
-    <p>Choose the closest explanation, Your Honour.</p>
+    <p>
+      Choose the closest explanation, Your Honour.
+    </p>
 
-    <button
-      class="choice"
-      onclick="theory('Texts need subtitles. 😭')"
-    >
+    <button class="choice"
+      onclick="theory('Texts need subtitles. 😭')">
       📱 Miscommunication — texts need subtitles.
     </button>
 
-    <button
-      class="choice"
-      onclick="theory('Brain.exe stopped working at the worst moment. 🫠')"
-    >
+    <button class="choice"
+      onclick="theory('Brain.exe stopped working at the worst moment. 🫠')">
       🧠 Brain.exe stopped working.
     </button>
 
-    <button
-      class="choice"
-      onclick="theory('A little communication update was needed. 🔄')"
-    >
+    <button class="choice"
+      onclick="theory('A little communication update was needed. 🔄')">
       🔄 A little communication update was needed.
     </button>
 
-    <p id="theoryResult" class="accent" aria-live="polite"></p>
+    <p id="theoryResult"
+       class="accent"
+       aria-live="polite"></p>
 
     <div class="row">
       <button class="secondary" onclick="showPage(0)">
@@ -524,9 +484,7 @@ button:hover,
 
   </section>
 
-
-  <!-- PAGE 3: SINCERE APOLOGY -->
-
+  <!-- PAGE 3 -->
   <section class="card">
 
     <div class="emoji">🥺🤍</div>
@@ -534,14 +492,14 @@ button:hover,
     <h2>Jokes aside…</h2>
 
     <p>
-      Bhumika, I’m sorry this misunderstanding
-      happened and that things ended up this way.
+      Bhumika, I’m sorry this misunderstanding happened
+      and that things ended up this way.
     </p>
 
     <p>
-      I don’t want to dismiss how you feel, argue
-      about who’s right, or make excuses. I should
-      listen properly and explain myself more clearly.
+      I don’t want to dismiss how you feel, argue about
+      who’s right, or make excuses. I should listen
+      properly and explain myself more clearly.
     </p>
 
     <p>
@@ -551,8 +509,8 @@ button:hover,
     </p>
 
     <div class="note">
-      — Arup, the idiot trying to communicate
-      like a normal human being. 🫡
+      — Arup, the idiot trying to communicate like
+      a normal human being. 🫡
     </div>
 
     <div class="row">
@@ -570,9 +528,7 @@ button:hover,
 
   </section>
 
-
-  <!-- PAGE 4: VERDICT -->
-
+  <!-- PAGE 4 -->
   <section class="card">
 
     <div class="emoji">⚖️🍓</div>
@@ -580,17 +536,13 @@ button:hover,
     <h2>The court’s verdict</h2>
 
     <p>
-      After reviewing the evidence,
-      the court finds Arup…
+      After reviewing the evidence, the court finds Arup…
     </p>
 
     <div class="note">
-      ☑️ Guilty of overthinking
-      <br>
-      ☑️ Guilty of not explaining things clearly enough
-      <br>
-      ☑️ Sentenced to listen properly and do better
-      <br>
+      ☑️ Guilty of overthinking<br>
+      ☑️ Guilty of not explaining things clearly enough<br>
+      ☑️ Sentenced to listen properly and do better<br>
       ☑️ Allowed to hope for a conversation—not demand one
     </div>
 
@@ -615,9 +567,7 @@ button:hover,
 
   </section>
 
-
-  <!-- PAGE 5: APOLOGY RESPONSE -->
-
+  <!-- PAGE 5 -->
   <section class="card">
 
     <div class="emoji">💗🫶</div>
@@ -629,8 +579,8 @@ button:hover,
     </p>
 
     <p class="small">
-      The runaway button is just a joke—you can
-      still choose honestly.
+      The runaway button is just a joke—you can still
+      choose honestly.
     </p>
 
     <div class="apology-buttons">
@@ -662,9 +612,7 @@ button:hover,
 
   </section>
 
-
-  <!-- PAGE 6: ENDING AND INSTAGRAM -->
-
+  <!-- PAGE 6 -->
   <section class="card">
 
     <div class="emoji">💌🌷</div>
@@ -683,8 +631,10 @@ button:hover,
     </div>
 
     <p>
-      <strong>If and when you’re comfortable, we can talk.</strong>
-      ❤️
+      <strong>
+        If and when you’re comfortable,
+        I’ll be ready to listen.
+      </strong> ❤️
     </p>
 
     <p>
@@ -692,19 +642,12 @@ button:hover,
       Scientifically unverified. 😂
     </p>
 
-    <a
-      class="insta"
-      href="https://www.instagram.com/_allabout.arup_/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      💌 Talk to Arup on Instagram
+    <a class="insta"
+       href="https://www.instagram.com/_allabout.arup_/"
+       target="_blank"
+       rel="noopener noreferrer">
+      💌 Visit Arup’s Instagram
     </a>
-
-    <p class="small">
-      This opens Arup’s profile.
-      You decide whether you’d like to reconnect.
-    </p>
 
     <div class="row">
       <button class="secondary" onclick="showPage(0)">
@@ -717,7 +660,6 @@ button:hover,
 
   </section>
 
-
   <div class="footer">
     Made with a little courage, a little humour,
     and a sincere apology. 💗
@@ -725,76 +667,61 @@ button:hover,
 
 </main>
 
-
 <script>
+const pages = [...document.querySelectorAll('.card')];
 
-/* PAGE NAVIGATION */
+const progress = document.getElementById('progress');
 
-const pages = [...document.querySelectorAll(".card")];
+pages.forEach((page, index) => {
+  const dot = document.createElement('span');
 
-const progress = document.getElementById("progress");
-
-pages.forEach((_, i) => {
-  const dot = document.createElement("span");
-
-  dot.className = "dot" + (i === 0 ? " on" : "");
+  dot.className = 'dot' + (index === 0 ? ' on' : '');
 
   progress.appendChild(dot);
 });
 
-function showPage(index) {
-  pages.forEach((page, i) => {
-    page.classList.toggle("active", i === index);
+function showPage(number) {
+  pages.forEach((page, index) => {
+    page.classList.toggle('active', index === number);
   });
 
-  [...progress.children].forEach((dot, i) => {
-    dot.classList.toggle("on", i === index);
+  [...progress.children].forEach((dot, index) => {
+    dot.classList.toggle('on', index === number);
   });
 
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: 'smooth'
   });
 }
 
-
-/* INVESTIGATION CHOICES */
-
 function theory(text) {
-  document.getElementById("theoryResult").textContent = text;
+  document.getElementById('theoryResult').textContent = text;
 }
-
-
-/* APOLOGY ACCEPTED */
 
 function accepted() {
-  document.getElementById("message").textContent =
-    "🥹❤️ CASE CLOSED! Arup’s happiness is now charging… 🍫🎉";
+  document.getElementById('message').textContent =
+    '🥹❤️ CASE CLOSED! Arup’s happiness is now charging… 🍫🎉';
 
-  const button = document.getElementById("noBtn");
+  const button = document.getElementById('noBtn');
 
-  button.textContent = "😳 Wait, really?";
-
-  button.style.position = "relative";
-  button.style.left = "";
-  button.style.top = "";
+  button.textContent = '😳 Wait, really?';
+  button.style.position = 'relative';
+  button.style.left = '';
+  button.style.top = '';
 }
 
-
-/* MOVING NOT-ACCEPTED BUTTON */
-
-const noBtn = document.getElementById("noBtn");
+const noBtn = document.getElementById('noBtn');
 
 let escapes = 0;
 
 function moveNo(event) {
   if (escapes >= 5) {
-    noBtn.textContent = "Okay, you can tap me 😅";
-
-    noBtn.style.position = "relative";
-    noBtn.style.left = "";
-    noBtn.style.top = "";
-
+    noBtn.textContent = 'Okay, you can tap me 😅';
+    noBtn.style.position = 'relative';
+    noBtn.style.left = '';
+    noBtn.style.top = '';
+    noBtn.style.zIndex = '2';
     return;
   }
 
@@ -805,11 +732,10 @@ function moveNo(event) {
   escapes++;
 
   const margin = 12;
-  const width = noBtn.offsetWidth;
 
   const maxX = Math.max(
     margin,
-    window.innerWidth - width - margin
+    window.innerWidth - noBtn.offsetWidth - margin
   );
 
   const maxY = Math.max(
@@ -817,60 +743,54 @@ function moveNo(event) {
     window.innerHeight - noBtn.offsetHeight - margin
   );
 
-  noBtn.style.position = "fixed";
+  noBtn.style.position = 'fixed';
 
   noBtn.style.left =
-    (margin + Math.random() * (maxX - margin)) + "px";
+    (margin + Math.random() * (maxX - margin)) + 'px';
 
   noBtn.style.top =
-    (margin + Math.random() * (maxY - margin)) + "px";
+    (margin + Math.random() * (maxY - margin)) + 'px';
 
-  noBtn.style.zIndex = "20";
+  noBtn.style.zIndex = '20';
 
   noBtn.textContent =
-    escapes >= 4
-      ? "Catch me first! 🏃‍♀️"
-      : "Not Accepted 😤";
+    escapes >= 4 ? 'Catch me first! 🏃‍♀️' : 'Not Accepted 😤';
 }
 
-noBtn.addEventListener("pointerenter", moveNo);
-noBtn.addEventListener("click", moveNo);
+noBtn.addEventListener('pointerenter', moveNo);
+noBtn.addEventListener('click', moveNo);
 
-noBtn.addEventListener(
-  "touchstart",
-  moveNo,
-  { passive: false }
-);
+noBtn.addEventListener('touchstart', moveNo, {
+  passive: false
+});
 
+/* Floating flower decorations */
 
-/* FLOATING FLOWERS AND HEARTS */
+const flowerBox = document.getElementById('flowers');
 
-const flowerBox = document.getElementById("flowers");
-
-const symbols = ["🌸", "💗", "🌷", "✨", "🌼"];
+const symbols = ['🌸', '💗', '🌷', '✨', '🌼'];
 
 for (let i = 0; i < 14; i++) {
-  const flower = document.createElement("span");
+  const flower = document.createElement('span');
 
-  flower.className = "flower";
+  flower.className = 'flower';
 
   flower.textContent =
     symbols[Math.floor(Math.random() * symbols.length)];
 
-  flower.style.left = Math.random() * 100 + "%";
+  flower.style.left = Math.random() * 100 + '%';
 
   flower.style.animationDuration =
-    (10 + Math.random() * 12) + "s";
+    (10 + Math.random() * 12) + 's';
 
   flower.style.animationDelay =
-    (-Math.random() * 18) + "s";
+    (-Math.random() * 18) + 's';
 
   flower.style.fontSize =
-    (12 + Math.random() * 13) + "px";
+    (12 + Math.random() * 13) + 'px';
 
   flowerBox.appendChild(flower);
 }
-
 </script>
 
 </body>
